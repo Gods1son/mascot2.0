@@ -66,7 +66,6 @@ var abuse = ["where are you from","can i see your passport","shaking my head","b
 //checking users entry and pics name
 function myfunction(){
 if(document.getElementById("trial").value.toLowerCase() === document.getElementById("images").alt){
-    navigator.notification.vibrate(500);
     counter++;
     scores += 10;
     levels += 1;
@@ -88,7 +87,7 @@ var scores = 0;
 var levels = 1;
 //getting help
 function helperMan(){
-    navigator.notification.alert(faces[counter].hint);
+    alert(faces[counter].hint);
     document.getElementById("help").innerHTML = faces[counter].hint;
 }
 function firstImage(){
