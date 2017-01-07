@@ -1,0 +1,60 @@
+body {
+    background-image: url("background3.jpg");
+    color: bisque;
+    margin-left: 50px;
+    margin-top:20px;
+}
+
+#images {
+    border: 2px groove navy;
+    border-radius: 25px;
+    box-shadow: 5px 2px 5px #888888;
+    margin-bottom: 20px;
+}
+
+#trial {
+   border: 2px groove red;
+    background-color: azure;
+    font-size: 1.2em;
+    color:darkblue;
+}
+
+#check {
+  background-color: blanchedalmond;
+    color:brown;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    margin-right: 85px;
+}
+#hinter {
+  background-color: blanchedalmond;
+    color:brown;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+#result {
+    font-size: 1.4em;
+    color:red;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+#help {
+    font-size: 1.4em;
+    color:lawngreen;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#score, #level {
+    font-size: 50px;
+    color:aqua;
+}
+
+.label {
+    font-size:30px;
+    color:chartreuse;
+}
