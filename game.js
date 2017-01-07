@@ -87,7 +87,6 @@ var scores = 0;
 var levels = 1;
 //getting help
 function helperMan(){
-    alert(faces[counter].hint);
     document.getElementById("help").innerHTML = faces[counter].hint;
 }
 function firstImage(){
