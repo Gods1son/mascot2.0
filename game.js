@@ -93,10 +93,15 @@ var idea;
 var names;
 var namesNo = 0;
 var namesSplit = [];
-
+var nice = 0;
+var comment;
 //array that throws jab when u get it wrong
 var abuse = ["where are you from","can i see your passport","shaking my head","beht why",
             "just try again","u miss am o"];
+//array that informs them that they passed
+var correctG = ["you smart","you sabi","ride on","i like that",
+            "keep it up","thumbs up"];
+
 //checking users entry and pics name
 function myfunction(){
 if(document.getElementById("trial").value.toLowerCase() === document.getElementById("images").alt){
@@ -109,6 +114,9 @@ if(document.getElementById("trial").value.toLowerCase() === document.getElementB
     //document.getElementById("trial").maxLength = (namesNo + 1);
     document.getElementById("trial").focus();
     //new things
+    var nice = Math.floor(Math.random() * 6);
+    comment = correctG[nice];
+    alert(comment);
     idea = faces[counter].clue;
     names = faces[counter].title;
     namesNo = names.length;
