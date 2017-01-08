@@ -99,8 +99,8 @@ var comment;
 var abuse = ["where are you from","can i see your passport","shaking my head","beht why",
             "just try again","u miss am o"];
 //array that informs them that they passed
-var correctG = ["you smart","you sabi","ride on","i like that",
-            "keep it up","thumbs up"];
+var correctG = ["You passed: you smart","You passed: you sabi","You passed: ride on","You passed: i like that",
+            "You passed: keep it up","You passed: thumbs up"];
 
 //checking users entry and pics name
 function myfunction(){
