@@ -1,8 +1,35 @@
+#Naija {
+    font-size: 2.2em;
+}
+
+#clue , #numbernames {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
 body {
-    background-image: url("background3.jpg");
+    background-image: url("images/background3.jpg");
     color: bisque;
     margin-left: 50px;
     margin-top:20px;
+    line-height: 1px;
+
+}
+.entry {
+    margin-right: 15px;
+    background-color: azure;
+    color:indigo;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: -50px;
+    border-radius: 10px;
+}
+.master {
+    margin-right: 15px;
+    background-color: azure;
+    color:indigo;
+    font-size: 1.4em;
+    font-weight: 600;
+    border-radius: 10px;
 }
 
 #images {
@@ -10,6 +37,9 @@ body {
     border-radius: 25px;
     box-shadow: 5px 2px 5px #888888;
     margin-bottom: 20px;
+}
+#options {
+
 }
 
 #trial {
@@ -22,7 +52,7 @@ body {
 #check {
   background-color: blanchedalmond;
     color:brown;
-    margin-top: 15px;
+    margin-top: -10px;
     margin-bottom: 10px;
     font-size: 1.2em;
     margin-right: 85px;
@@ -30,7 +60,7 @@ body {
 #hinter {
   background-color: blanchedalmond;
     color:brown;
-    margin-top: 15px;
+    margin-top: -10px;
     margin-bottom: 10px;
     font-size: 1.2em;
 }
@@ -50,7 +80,7 @@ body {
 }
 
 #score, #level {
-    font-size: 50px;
+    font-size: 40px;
     color:aqua;
 }
 

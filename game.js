@@ -1,65 +1,99 @@
 //an array that stores images and the names
 var faces = [{
-    src:'dangote.jpg',
+    src:'images/dangote.jpg',
     title:'dangote',
-    hint:'richest man in 9ja'
-},{src:'donjazzy.jpg',
-    title:'donjazzy',
-    hint:'mavin records'},{src:'myoga.jpg',
+    hint:'richest man in 9ja',
+    clue:'tdagnygvotlbuer'
+},{src:'images/donjazzy.jpg',
+    title:'don jazzy',
+    hint:'mavin records',
+    clue:'dtotnejbazdzsyc'},{src:'images/myoga.jpg',
     title:'oga at the top',
-    hint:'NSCDC.thatsall'},{src:'2baba.jpg',
+    hint:'NSCDC.thatsall',
+    clue:'ogabattohestsfp'},{src:'images/2baba.jpg',
     title:'2baba',
-    hint:'african queen'},{src:'abacha.jpg',
+    hint:'african queen',
+    clue:'yu2bhfagdbmnixa'},{src:'images/abacha.jpg',
     title:'abacha',
-    hint:'apple killed him'},{src:'adeboye.jpg',
+    hint:'apple killed him',
+    clue:'arbaurvcdidhgfa'},{src:'images/adeboye.jpg',
     title:'pst adeboye',
-    hint:'can somebody shout hallelujah'},{src:'adefarasin.jpg',
+    hint:'can somebody shout hallelujah',
+    clue:'pxswtrayfebofde'},{src:'images/adefarasin.jpg',
     title:'pst adefarasin',
-    hint:'He is a Pastor'},{src:'awolowo.jpg',
+    hint:'He is a Pastor',
+    clue:'astpdebfasaridn'},{src:'images/awolowo.jpg',
     title:'awolowo',
-    hint:'look at the cap'},{src:'banky.jpg',
+    hint:'look at the cap and glasses',
+    clue:'tawgotljovwonki'},{src:'images/banky.jpg',
     title:'banky w',
-    hint:'capable man'},{src:'buhari.jpg',
+    hint:'capable man',
+    clue:'abheansdkucywop'},{src:'images/buhari.jpg',
     title:'buhari',
-    hint:'the change'},{src:'chimamanda.jpg',
+    hint:'the change',
+    clue:'bxcusvfhjaryrfi'},{src:'images/chimamanda.jpg',
     title:'chimamanda',
-    hint:'a writer'},{src:'deolasagoe.jpg',
+    hint:'a writer',
+    clue:'cshiumadbmanvda'},{src:'images/deolasagoe.jpg',
     title:'deola sagoe',
-    hint:'deola'},{src:'djspinall.jpg',
-    title:'djspinall',
-    hint:'the cap'},{src:'dokubo.jpg',
+    hint:'deola',
+    clue:'dexolgasdargoce'},{src:'images/djspinall.jpg',
+    title:'dj spinall',
+    hint:'the cap',
+    clue:'drjsapibnamluly'},{src:'images/dokubo.jpg',
     title:'asari dokubo',
-    hint:'militant'},{src:'fela.jpg',
+    hint:'militant',
+    clue:'asbarifdoktuibo'},{src:'images/fela.jpg',
     title:'fela',
-    hint:'plenty wives + ganja'},{src:'goodluck.jpg',
+    hint:'plenty wives + ganja',
+    clue:'fenuyexpoungrla'},{src:'images/goodluck.jpg',
     title:'goodluck',
-    hint:'ex president'},{src:'herbert.jpg',
-    title:'macauley',
-    hint:'10 naira note'},{src:'honpatrick.jpg',
+    hint:'ex president',
+    clue:'gnoordsdlusrfck'},{src:'images/herbert.jpg',
+    title:'macaulay',
+    hint:'10 naira note',
+    clue:'mawvcfarsulfuey'},{src:'images/honpatrick.jpg',
     title:'hon patrick',
-    hint:'la honourable grammarly'},{src:'jagaban.jpg',
+    hint:'la honourable grammarly',
+    clue:'hoenpvadtrmiuck'},{src:'images/jagaban.jpg',
     title:'jagaban',
-    hint:'lagos apc boss'},{src:'kanu.jpg',
+    hint:'Tinubu nickname',
+    clue:'jtagradkbadtrun'},{src:'images/kanu.jpg',
     title:'kanu',
-    hint:'olympics 98 hero'},{src:'lagbaja.jpg',
+    hint:'olympics 98 hero',
+    clue:'kyritadenywvhou'},{src:'images/lagbaja.jpg',
     title:'lagbaja',
-    hint:'konko below'},{src:'obasanjo.jpg',
+    hint:'konko below',
+    clue:'layvgbiajhdavbr'},{src:'images/obasanjo.jpg',
     title:'obasanjo',
-    hint:'baba iyabo'},{src:'okonjo.jpg',
+    hint:'baba iyabo',
+    clue:'oybrasfyauvnjor'},{src:'images/okonjo.jpg',
     title:'okonjo',
-    hint:'finance'},{src:'oritsejafor.jpg',
+    hint:'finance',
+    clue:'oekcdgtofyvnjuo'},{src:'images/oritsejafor.jpg',
     title:'oritsejafor',
-    hint:'CAN'},{src:'psquare.jpg',
+    hint:'CAN',
+    clue:'oruitgsejdayfor'},{src:'images/psquare.jpg',
     title:'psquare',
-    hint:'Senorita'},{src:'toolz.jpg',
+    hint:'Senorita',
+    clue:'pyusqdqrutgarve'},{src:'images/toolz.jpg',
     title:'toolz',
-    hint:'NdaniTV'},{src:'wizkid.jpg',
+    hint:'NdaniTV',
+    clue:'teovsntuiobflzs'},{src:'images/wizkid.jpg',
     title:'wizkid',
-    hint:'One dance ft drake'},{src:'wole.jpg',
+    hint:'One dance ft drake',
+    clue:'awsridzyekfbind'},{src:'images/wole.jpg',
     title:'soyinka',
-    hint:'nobel laurel'}];
+    hint:'nobel laurel',
+    clue:'scrqotysijdnkda'}];
 //used to display objects in the faces when u get the pics right
 var counter = 0;
+//variables used in the game
+var idea;
+var names;
+var namesNo = 0;
+var namesSplit = [];
+
 //array that throws jab when u get it wrong
 var abuse = ["where are you from","can i see your passport","shaking my head","beht why",
             "just try again","u miss am o"];
@@ -72,7 +106,15 @@ if(document.getElementById("trial").value.toLowerCase() === document.getElementB
     document.getElementById("score").innerHTML = scores;
     document.getElementById("level").innerHTML = levels;
     document.getElementById("trial").value = '';
+    //document.getElementById("trial").maxLength = (namesNo + 1);
     document.getElementById("trial").focus();
+    //new things
+    idea = faces[counter].clue;
+    names = faces[counter].title;
+    namesNo = names.length;
+    document.getElementById("numbernames").innerHTML = namesNo;
+    splitName();
+    //end of new things
     document.getElementById("images").alt = faces[counter].title;
 	document.getElementById('images').src=faces[counter].src;
     document.getElementById("result").innerHTML = " ";
@@ -92,5 +134,35 @@ function helperMan(){
 function firstImage(){
     document.getElementById('images').src=faces[counter].src;
     document.getElementById("images").alt = faces[counter].title;
+    idea = faces[counter].clue;
+    names = faces[counter].title;
+    namesNo = names.length;
+    document.getElementById("numbernames").innerHTML = namesNo;
+  //  document.getElementById("trial").maxLength = namesNo;
+    splitName();
 }
 window.onload = firstImage;
+//displaying the name on buttons
+function splitName(){
+    namesSplit = idea.split("");
+    for (var i = 0;i < namesSplit.length;i++){
+        var trying = i;
+        document.getElementById(trying).value = namesSplit[i];
+    }
+}
+
+function clickThing(idbutton){
+    document.getElementById("trial").value += document.getElementById(idbutton).value;
+}
+
+function addSpace(){
+    document.getElementById("trial").value += " ";
+}
+
+function wipeLast(){
+    var wiper;
+    var word;
+    word = document.getElementById("trial").value;
+    wiper = word.substr(0, word.length - 1)
+    document.getElementById("trial").value = wiper;
+}
