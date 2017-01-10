@@ -108,7 +108,13 @@ if(document.getElementById("trial").value.toLowerCase() === document.getElementB
     counter++;
     scores += 10;
     levels += 1;
-    //saving the level to system
+    //saving the scores to the phone
+    window.localStorage.setItem('points', scores);
+    scores = window.localStorage.getItem('points');
+    //saving the stage to the phone
+    window.localStorage.setItem('stages', levels);
+    levels = window.localStorage.getItem('stages');
+    //saving the counter to phone
     window.localStorage.setItem('key', counter);
     counter = window.localStorage.getItem('key');
     /////
@@ -146,10 +152,27 @@ function helperMan(){
 
 //function that displays the first objects and passes it to the window load
 function firstImage(){
+    //saving the level into the phone
     if(window.localStorage.getItem('key')==null){
         window.localStorage.setItem('key', 0);
         counter = window.localStorage.getItem('key');
        } else { counter = window.localStorage.getItem('key'); }
+    //end of saving level
+    //saving scores to the phone
+    if(window.localStorage.getItem('points')==null){
+        window.localStorage.setItem('points', 0);
+        scores = window.localStorage.getItem('points');
+        document.getElementById("score").innerHTML = scores;
+       } else { scores = window.localStorage.getItem('points');
+              document.getElementById("score").innerHTML = scores; }
+    //end of saving score
+    //saving levels to phone
+    if(window.localStorage.getItem('stages')==null){
+        window.localStorage.setItem('stages', 1);
+        levels = window.localStorage.getItem('stages');
+        document.getElementById("level").innerHTML = levels;
+       } else { levels = window.localStorage.getItem('stages');
+              document.getElementById("level").innerHTML = levels; }
     document.getElementById('images').src=faces[counter].src;
     document.getElementById("images").alt = faces[counter].title;
     idea = faces[counter].clue;
