@@ -108,6 +108,10 @@ if(document.getElementById("trial").value.toLowerCase() === document.getElementB
     counter++;
     scores += 10;
     levels += 1;
+    //saving the level to system
+    window.localStorage.setItem('key', counter);
+    counter = window.localStorage.getItem('key');
+    /////
     document.getElementById("score").innerHTML = scores;
     document.getElementById("level").innerHTML = levels;
     document.getElementById("trial").value = '';
@@ -139,7 +143,13 @@ var levels = 1;
 function helperMan(){
     document.getElementById("help").innerHTML = faces[counter].hint;
 }
+
+//function that displays the first objects and passes it to the window load
 function firstImage(){
+    if(window.localStorage.getItem('key')==null){
+        window.localStorage.setItem('key', 0);
+        counter = window.localStorage.getItem('key');
+       } else { counter = window.localStorage.getItem('key'); }
     document.getElementById('images').src=faces[counter].src;
     document.getElementById("images").alt = faces[counter].title;
     idea = faces[counter].clue;
@@ -150,23 +160,26 @@ function firstImage(){
     splitName();
 }
 window.onload = firstImage;
+
 //displaying the name on buttons
 function splitName(){
     namesSplit = idea.split("");
     for (var i = 0;i < namesSplit.length;i++){
+        // trying fills the buttons
         var trying = i;
         document.getElementById(trying).value = namesSplit[i];
     }
 }
 
+//function that response to button click
 function clickThing(idbutton){
     document.getElementById("trial").value += document.getElementById(idbutton).value;
 }
-
+//function that responds to space button
 function addSpace(){
     document.getElementById("trial").value += " ";
 }
-
+//function that responds to backspace button
 function wipeLast(){
     var wiper;
     var word;
@@ -174,3 +187,5 @@ function wipeLast(){
     wiper = word.substr(0, word.length - 1)
     document.getElementById("trial").value = wiper;
 }
+
+
